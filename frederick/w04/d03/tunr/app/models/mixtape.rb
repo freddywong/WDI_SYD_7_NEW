@@ -14,7 +14,8 @@ class Mixtape < ActiveRecord::Base
 	validates :name, presence: true
 	validates :description, presence: true
 	# validates :user_id, presence: true
-	
+	has_many :mixtape_songs
+	has_many :songs, through: :mixtape_songs
 
 	
 end

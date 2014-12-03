@@ -20,6 +20,12 @@
 	</p>
 </div>
 
+<div class="form_group">
+	
+	<p><%= collection_check_boxes(:mixtape, :song_ids, Song.all, :id, :name) %></p>
+		
+	</div>
+
 <div class="form-group">
 	<%= f.submit %>
 </div>

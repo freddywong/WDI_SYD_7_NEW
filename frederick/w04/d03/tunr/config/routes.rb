@@ -35,6 +35,14 @@
 #                          PATCH  /songs/:id(.:format)              songs#update
 #                          PUT    /songs/:id(.:format)              songs#update
 #                          DELETE /songs/:id(.:format)              songs#destroy
+#                 mixtapes GET    /mixtapes(.:format)               mixtapes#index
+#                          POST   /mixtapes(.:format)               mixtapes#create
+#              new_mixtape GET    /mixtapes/new(.:format)           mixtapes#new
+#             edit_mixtape GET    /mixtapes/:id/edit(.:format)      mixtapes#edit
+#                  mixtape GET    /mixtapes/:id(.:format)           mixtapes#show
+#                          PATCH  /mixtapes/:id(.:format)           mixtapes#update
+#                          PUT    /mixtapes/:id(.:format)           mixtapes#update
+#                          DELETE /mixtapes/:id(.:format)           mixtapes#destroy
 #                     root GET    /                                 welcome#index
 #
 

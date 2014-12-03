@@ -46,7 +46,7 @@ class MixtapesController < ApplicationController
 	end
 
 	def mixtape_params
-		params.require(:mixtape).permit(:name, :description, :user_id)
+		params.require(:mixtape).permit(:name, :description, song_ids: [])
 	end
 end
 

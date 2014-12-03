@@ -1,7 +1,14 @@
 <h2>Mixtape Page</h2>
 
-<h3><%= @mixtape.name %></h3>
-<ul>
-<li><%= @mixtape.description %></li>
-
-</ul>
+<% if @mixtape.songs.count == 0 %>
+	<p>No songs yet...</p>
+<% else %>
+	<h3><%= @mixtape.name %></h3>
+	<ul>
+		<li><%= @mixtape.description %></li>
+		<li><% @mixtape.songs.each do |song| %>
+			<%= link_to song.name, song %>
+			<% end %>
+		</li>
+	</ul>
+<% end %>

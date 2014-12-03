@@ -2,8 +2,19 @@
 
 <h3><%= @artist.name %></h3>
 <ul>
-<li><%= @artist.hometown %></li>
-<li><%= @artist.bio %></li>
-<li><%= @artist.years_active %></li>
-<li><%= @artist.label %></li>
+	<li><%= @artist.hometown %></li>
+	<li><%= @artist.bio %></li>
+	<li><%= @artist.years_active %></li>
+	<li><%= @artist.label %></li>
 </ul>
+
+<h4><%= @artist.name %>'s Songs</h4>	
+<% if @artist.songs.count == 0 %>
+<p>No songs yet...</p>
+<% else %>
+
+<% @artist.songs.each do |song| %>
+<p><%= link_to song.name, song %></p>
+<% end %>
+
+<% end %>

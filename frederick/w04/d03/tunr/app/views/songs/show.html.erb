@@ -5,5 +5,5 @@
 <li><%= @song.year %></li>
 <li><%= @song.genre %></li>
 <li><%= @song.duration %></li>
-<li><%= @song.artist.name %></li>
+<li><%= link_to @song.artist.name, @song.artist %></li>
 </ul>
