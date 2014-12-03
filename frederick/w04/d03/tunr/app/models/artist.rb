@@ -18,5 +18,7 @@ class Artist < ActiveRecord::Base
 	validates :bio, presence: true
 	validates :years_active, presence: true
 	validates :label, presence: true
-	
+
+	has_many :songs
+
 end

@@ -1,0 +1,42 @@
+<% unless @song.errors.empty? %>
+<ul id='errors'>
+<% @song.errors.full_messages.each do |error| %>
+<li><%= error %></li>
+<% end %>
+</ul>
+<% end %>
+
+<%= form_for @song do |f| %>
+<div class="form-group">
+	<p>
+		<%= f.label :name %><br>
+		<%= f.text_field :name %>
+	</p>
+</div>
+<div class="form-group">
+	<p>
+		<%= f.label :year %><br>
+		<%= f.number_field :year %>
+	</p>
+</div>
+<div class="form-group">
+	<p>
+		<%= f.label :genre %><br>
+		<%= f.text_field :genre %>
+	</p>
+</div>
+<div class="form-group">
+	<p>
+		<%= f.label :duration %><br>
+		<%= f.text_field :duration %>
+	</p>
+</div>
+<div class="form_group">
+	<%= f.label :artist_id, 'Artist' %>
+	<%= f.collection_select :artist_id, Artist.all, :id, :name %>
+</div>
+<div class="form-group">
+	<%= f.submit %>
+</div>
+
+<% end %>

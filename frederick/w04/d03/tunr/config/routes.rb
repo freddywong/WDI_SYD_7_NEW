@@ -27,13 +27,24 @@
 #                          PATCH  /artists/:id(.:format)            artists#update
 #                          PUT    /artists/:id(.:format)            artists#update
 #                          DELETE /artists/:id(.:format)            artists#destroy
+#                    songs GET    /songs(.:format)                  songs#index
+#                          POST   /songs(.:format)                  songs#create
+#                 new_song GET    /songs/new(.:format)              songs#new
+#                edit_song GET    /songs/:id/edit(.:format)         songs#edit
+#                     song GET    /songs/:id(.:format)              songs#show
+#                          PATCH  /songs/:id(.:format)              songs#update
+#                          PUT    /songs/:id(.:format)              songs#update
+#                          DELETE /songs/:id(.:format)              songs#destroy
 #                     root GET    /                                 welcome#index
 #
 
 Rails.application.routes.draw do
+  
+
   devise_for :users
   resources :artists, only: [:index, :new, :create, :show, :edit, :update, :destroy]
-  
+  resources :songs, only: [:index, :new, :create, :show, :edit, :update, :destroy]
+  resources :mixtapes, only: [:index, :new, :create, :show, :edit, :update, :destroy]
 
   root "welcome#index"
   # The priority is based upon order of creation: first created -> highest priority.

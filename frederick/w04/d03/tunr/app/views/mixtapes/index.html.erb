@@ -1,0 +1,11 @@
+<h2>Mixtape List</h2>
+<ul>
+<% @mixtapes.each do |mixtape| %>
+<li><%= mixtape.name %> |
+	<%= link_to 'Show', mixtape_path(mixtape) %> |
+	<%= link_to 'Edit', edit_mixtape_path(mixtape) %> |
+	<%= link_to 'Delete', mixtape_path(mixtape), method: :delete, data: { confirm: 'Are you sure?'} %>
+</li>
+
+<% end %>
+</ul>
