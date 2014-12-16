@@ -1,0 +1,8 @@
+<%= @post.title %>
+<%= @post.author %>
+<%= @post.content %>
+  <% unless @post.comments.count == 0 %>
+  <%= @post.comments.first.content %>
+<% else %>
+There are no comments
+<% end %>
