@@ -12,6 +12,24 @@
 //
 //= require jquery_ujs
 //= require turbolinks
+//= require handlebars.runtime
+//= require_tree ./templates
 //= require_tree ./models
 //= require_tree ./collections
 //= require_tree .
+
+var statusCollection = new Statuses();
+
+statusCollection.on("add", function(status){
+  $("body").append(
+    JST['status'](
+      status.toJSON()
+    )
+  );
+});
+statusCollection.fetch();
+
+statusCollection.create({
+  username: "Hubert",
+  content: "Hellooooo"
+});
