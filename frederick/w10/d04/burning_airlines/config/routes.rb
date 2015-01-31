@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get 'airplanes/index'
+  root 'airplanes#index'
 
   resources :airplanes
   # The priority is based upon order of creation: first created -> highest priority.

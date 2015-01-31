@@ -1,8 +1,25 @@
-<ul>
-<% @airplanes.each do |airplane| %>
-  <li><%= airplane.name %></li>
-  <li><%= airplane.rows %></li>
-  <li><%= airplane.columns %></li>
-  <li><%= airplane.columns * airplane.rows %></li>
-<% end %>
-</ul>
+
+<form>
+  <input type="text" placeholder="Name">
+  <input type="text" placeholder="Rows">
+  <input type="text" placeholder="Columns">
+  <input type="submit">
+</form>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Rows</th>
+    <th>Columns</th>
+    <th>Seats</th>
+  </tr>
+  <% @airplanes.each do |airplane| %>
+    <tr>
+      <td><%= airplane.name %></td>
+      <td><%= airplane.rows %></td>
+      <td><%= airplane.columns %></td>
+      <td><%= airplane.columns * airplane.rows %></td>
+    </tr>
+  <% end %>
+</table>
+
