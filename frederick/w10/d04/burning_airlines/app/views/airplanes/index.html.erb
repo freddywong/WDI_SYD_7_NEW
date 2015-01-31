@@ -1,2 +1,8 @@
-<h1>Airplanes#index</h1>
-<p>Find me in app/views/airplanes/index.html.erb</p>
+<ul>
+<% @airplanes.each do |airplane| %>
+  <li><%= airplane.name %></li>
+  <li><%= airplane.rows %></li>
+  <li><%= airplane.columns %></li>
+  <li><%= airplane.columns * airplane.rows %></li>
+<% end %>
+</ul>
