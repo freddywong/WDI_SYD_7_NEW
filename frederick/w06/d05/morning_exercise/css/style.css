@@ -1,0 +1,26 @@
+/*box sizing makes it so that you do not need to adjust the width by 1px to have everything fit in properly*/
+
+*{
+	box-sizing: border-box;
+}
+
+#container {
+	width: 960px;
+	margin: 20px auto;
+}
+
+main {
+	padding: 20px;
+	width: 640px;
+	float:left;
+	border-right: 1px solid #ccc;
+
+
+}
+
+
+aside {
+	padding: 20px;
+	width: 320px;
+	float: right;
+}

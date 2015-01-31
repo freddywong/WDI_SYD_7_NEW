@@ -1,0 +1,19 @@
+
+
+<h2><%= @recipe.name %></h2>
+
+<% if @recipe.book %>
+<h3>In Cookbook: <%= @recipe.book.title %></h3>
+<% end %>
+
+<h5>Cooktime: <%= @recipe.cooktime %></h5>
+<h5>Serving size: <%= @recipe.servingsize %></h5>
+<h5>Ingredients: <% @recipe.ingredients.each do |ingredient| %>
+	<%= ingredient.name %>
+	<% end %></h5>
+
+	<p><%= link_to 'Edit', edit_recipe_path(@recipe) %> | <%= link_to 'Destroy', recipe_path(@recipe),
+		method: :delete, data: { confirm: 'Are you sure?' } %></p>
+
+		<%= image_tag @recipe.image %>
+

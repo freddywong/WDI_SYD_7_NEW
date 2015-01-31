@@ -1,0 +1,6 @@
+<h1>Ingredients</h1>
+<% @ingredients.each do |ingredient| %>
+<h3><%= link_to ingredient.name, ingredient_path(ingredient) %></h3>
+<p><%= link_to 'Show', ingredient_path(ingredient) %> | <%= link_to 'Edit', edit_ingredient_path(ingredient) %> | <%= link_to 'Destroy', ingredient_path(ingredient),
+	method: :delete, data: { confirm: 'Are you sure?' } %></p>
+	<% end %>

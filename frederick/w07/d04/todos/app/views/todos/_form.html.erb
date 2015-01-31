@@ -1,0 +1,20 @@
+<%= form_for @todo do |f| %>
+  <p>
+    <%= f.label :text %><br>
+    <%= f.text_area :text %>
+  </p>
+ 
+  <p>
+    <%= f.label :notes %><br>
+    <%= f.text_area :notes %>
+  </p>
+  
+  <p>
+    <%= f.label :completed %>
+    <%= f.check_box :completed %>
+  </p>
+
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>

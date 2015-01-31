@@ -17,9 +17,11 @@ describe Sims::Person do
   end  
   describe ".eat" do
     let(:food) { Sims::Food.new }
+
     before(:each) do
       food.weight = 2
     end
+
     it "changes hunger" do
       
       person.hunger = 10
@@ -27,11 +29,11 @@ describe Sims::Person do
       expect(person.hunger).to eq(8)
 
     end
+
     it "changes weight" do
 
       person.weight = 70
       person.eat(food)
-
       expect(person.weight).to eq(72)
     end
   end

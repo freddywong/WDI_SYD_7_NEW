@@ -1,0 +1,29 @@
+<div class="row">
+  <div class="col-sm-8 col-md-10">
+    <h1>Listing articles</h1>
+  </div>
+  <div class="col-sm-4 col-md-2">
+    <p><%= link_to 'New Article', new_article_path, class: 'btn btn-primary' %></p>
+  </div>
+</div>
+
+  <% @articles.each do |article| %>
+  <div class="row">
+    <div class="col-md-10">
+      <h3><%= article.title %></h3>
+      <p><%= article.content %></p>
+    </div>
+    <div class="col-md-2">
+      <p>
+        <%= link_to 'Show', article, class: "btn btn-info" %><br>
+        <%= link_to 'Edit', edit_article_path(article), class: "btn btn-default" %><br>
+        <%= link_to 'Destroy', article, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
+      </p>
+    </div>
+  </div>
+  <% end %>
+
+
+
+
+

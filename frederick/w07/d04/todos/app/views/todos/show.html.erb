@@ -1,0 +1,5 @@
+<h1>Todo</h1>
+<p>Text: <%= @todo.text %></p>
+<p>Notes: <%= @todo.notes %></p>
+<p>Completed: <%= @todo.completed ? "Yes" : "No" %></p>
+<%= link_to 'See all todos', todos_path %>

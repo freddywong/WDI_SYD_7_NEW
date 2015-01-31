@@ -1,0 +1,59 @@
+<%= form_for @recipe do |f| %>
+
+<div class="form_group">
+	<%= f.label :name %>
+	<%= f.text_field :name %>
+</div>
+
+<div class="form_group">
+	<%= f.label :course %>
+	<%= f.text_field :course %>
+</div>
+
+<div class="form_group">
+	<%= f.label :cooktime, 'Cook Time' %>
+	<%= f.text_field :cooktime %>
+</div>
+
+<div class="form_group">
+	<%= f.label :servingsize, 'Serving Size' %>
+	<%= f.text_field :servingsize %>
+</div>
+
+<div class="form_group">
+	<%= f.label :instructions %>
+	<%= f.text_area :instructions %>
+</div>
+
+<div class="form_group">
+	<%= f.label :image %>
+	<%= f.url_field :image %>
+</div>
+
+<div class="form_group">
+	<%= f.label :title %>
+	<%= f.collection_select :book_id, Book.all, :id, :title %>
+</div>
+
+<!-- <div class="form_group">
+	<% @recipe.ingredients.each do |ingredient| %>
+	<p><%= check_box_tag 'recipe[ingredient_ids][]', ingredient.id, false %>
+		<%= ingredient.name %></p>
+		<% end %>
+	</div> -->
+
+<div class="form_group">
+	
+	<p><%= collection_check_boxes(:recipe, :ingredient_ids, Ingredient.all, :id, :name) %></p>
+		
+	</div>
+
+<!-- collection_check_boxes(:post, :author_ids, Author.all, :id, :name_with_initial)	 -->
+<!-- 
+
+
+<div class="form-group">
+	<%= f.submit %>
+</div>
+
+<% end %>
