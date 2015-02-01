@@ -2,8 +2,8 @@ var App = App || {}
 
 App.AirplaneView = Backbone.View.extend({
   tagName: 'tr',
-  render: function(){
 
+  render: function(){
 
     this.$el.html(JST["plane"](this.model.toJSON()));
 
@@ -13,7 +13,6 @@ App.AirplaneView = Backbone.View.extend({
   seats: function() {
 
     return this.model.attributes.rows * this.model.attributes.columns;
-
-
   }
+
 })
