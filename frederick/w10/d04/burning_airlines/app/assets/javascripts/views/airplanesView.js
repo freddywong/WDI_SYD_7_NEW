@@ -3,7 +3,8 @@ var App = App || {}
 App.AirplanesView = Backbone.View.extend({
 
   events: {
-    'click .create_plane': 'renderPlaneForm'
+    'click .create_plane': 'renderPlaneForm',
+    'click .cancel_plane': 'cancelPlane'
   },
 
   render: function(){
@@ -28,6 +29,11 @@ App.AirplanesView = Backbone.View.extend({
 
   renderPlaneForm: function() {
     this.$el.find(".plane_form").html(JST["form"]());  
+  },
+
+  cancelPlane: function() {
+    event.preventDefault();
+    this.$el.find(".plane_form").html("");
   }
   
 });
