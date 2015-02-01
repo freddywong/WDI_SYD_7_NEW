@@ -1,4 +1,3 @@
-
 <form>
   <input type="text" placeholder="Name">
   <input type="text" placeholder="Rows">
@@ -13,13 +12,4 @@
     <th>Columns</th>
     <th>Seats</th>
   </tr>
-  <% @airplanes.each do |airplane| %>
-    <tr>
-      <td><%= airplane.name %></td>
-      <td><%= airplane.rows %></td>
-      <td><%= airplane.columns %></td>
-      <td><%= airplane.columns * airplane.rows %></td>
-    </tr>
-  <% end %>
 </table>
-
